@@ -1,0 +1,40 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "app"
+      }
+    ],
+    "postdeploy": ["npm run build"]
+  },
+  "functions": [{
+    "runtime": "nodejs22",
+    "source": "../seniorProjectBackEnd_Express/functions",
+    "codebase": "default",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "*.local"
+    ],
+    "predeploy": []
+  }],
+  "emulators": {
+    "functions": {
+      "host": "localhost",
+      "port": 5001
+    },
+    "hosting": {
+      "host": "localhost",
+      "port": 5000
+    }
+  }
+}
