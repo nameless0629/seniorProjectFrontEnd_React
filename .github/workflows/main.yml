@@ -29,5 +29,4 @@ jobs:
         run: npm run build
 
       - name: 🚀 Deploy to Firebase
-        working-directory: functions  # ✅ 確保從 functions 資料夾部署
         run: firebase deploy --only hosting --force --token ${{ secrets.FIREBASE_TOKEN }} --debug
