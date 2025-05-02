@@ -1,4 +1,4 @@
-name: Deploy Firebase Functions
+name: Deploy Firebase Hosting
 
 on:
   workflow_dispatch:
