@@ -26,7 +26,7 @@ jobs:
         run: npm ci  # ✅ ci 會清除 node_modules 並用 package-lock 安裝乾淨環境（推薦）
 
       - name: Build React.js
-        run: npm run dev
+        run: npm run build
 
       - name: 🚀 Deploy to Firebase
         working-directory: functions  # ✅ 確保從 functions 資料夾部署
