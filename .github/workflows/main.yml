@@ -1,0 +1,33 @@
+name: Deploy Firebase Functions
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master  # 當 push 到 main 分支時自動執行部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔥 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  # ✅ 改為 Firebase 支援的版本
+
+      - name: 🔥 Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: 📦 Install Dependencies
+        run: npm ci  # ✅ ci 會清除 node_modules 並用 package-lock 安裝乾淨環境（推薦）
+
+      - name: Build React.js
+        run: npm run dev
+
+      - name: 🚀 Deploy to Firebase
+        working-directory: functions  # ✅ 確保從 functions 資料夾部署
+        run: firebase deploy --only hosting --force --token ${{ secrets.FIREBASE_TOKEN }} --debug
