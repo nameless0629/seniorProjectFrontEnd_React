@@ -8,17 +8,16 @@ import HomePage from "./HomePage.jsx";
 
 function App() {
 
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [token , setToken] = useState(null);
+    const [token , setToken] = useState(sessionStorage.getItem("token"));
 
     return (
         <Router>
             <Routes>
                 <Route path="/" element={
-                    isAuthenticated ? <Navigate to="/home" /> : <LoginPage onLogin={() => setIsAuthenticated(true)} setToken={setToken}/>
+                    token ? <Navigate to="/home" /> : <LoginPage setToken={setToken}/>
                 } />
                 <Route path="/home" element={
-                    isAuthenticated ? <HomePage token={token} /> : <Navigate to="/" />
+                    token ? <HomePage token={token} setToken={setToken} /> : <Navigate to="/" />
                 } />
             </Routes>
         </Router>
