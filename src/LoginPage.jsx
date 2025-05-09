@@ -5,7 +5,7 @@ import LoginForm from "./components/LoginForm.jsx";
 import { useState, useEffect } from "react";
 
 const rotatingTexts = [
-    { zh: "一眼掌握你的健康狀態", en: "Health insights, clearly delivered." ,}
+    { zh: "一眼掌握你的健康狀態", en: "Health insights, clearly delivered." },
     { zh: "讓健康數據成為日常習慣", en: "Your health, visualized and simplified." },
     { zh: "簡潔呈現，深刻理解", en: "Simplicity meets meaningful health data." },
     { zh: "數據為你說話", en: "Where numbers tell your health story." },
@@ -42,6 +42,12 @@ function LoginPage({ onLogin, setToken }) {
                             onClick={() => setStart(false)}
                         >
                             首頁
+                        </button>
+                        <button
+                            className="rounded bg-blue-400 px-4 py-1 text-white hover:bg-blue-500"
+                            onClick={() => setStart(true)}
+                        >
+                            登入
                         </button>
                     </div>
                 </div>
