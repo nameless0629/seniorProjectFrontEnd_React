@@ -55,7 +55,7 @@ function HomePage({token , setToken}) {
             </div>
             <div className="m-0 flex flex-grow overflow-hidden p-0 h-[100%]">
                 <div className="overflow-y-auto h-[100%] w-[20%] bg-gray-950 min-w-[200px]">
-                    <SidebarItem title="總攬" contents={{"今日摘要":null, "近期趨勢":null, "通知與提醒":null}}></SidebarItem>
+                    <SidebarItem title="總覽" contents={{"今日摘要":null, "近期趨勢":null, "通知與提醒":null}}></SidebarItem>
                     <SidebarItem title="生理數據" contents={{"心率":null, "呼吸速率":null, "體溫":null, "血氧/血壓":null}}></SidebarItem>
                     <SidebarItem title="活動數據" contents={{"Opt1": null, "Opt2": null, "Opt3": null}}></SidebarItem>
                     <SidebarItem title="睡眠數據" contents={{"Opt1": null, "Opt2": null, "Opt3": null}}></SidebarItem>
